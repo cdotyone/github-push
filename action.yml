@@ -1,0 +1,13 @@
+name: 'Get Next Version'
+description: 'Gets next version based on previous tag'
+branding:
+  icon: 'tag'
+  color: 'gray-dark'
+outputs:
+  tag:
+    description: 'last tag version'
+  version:
+    description: 'next tag version'
+runs:
+  using: 'node12'
+  main: 'index.js'

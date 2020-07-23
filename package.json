@@ -1,0 +1,43 @@
+{
+  "name": "github-push",
+  "version": "1.0.0",
+  "description": "Used to push files after build.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint index.js",
+    "package": "ncc build index.js -o dist",
+    "test": "eslint index.js && jest",
+    "build": "ncc build index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cdotyone/github-push.git"
+  },
+  "keywords": [
+    "GitHub",
+    "Actions",
+    "JavaScript"
+  ],
+  "author": "Chris Doty",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cdotyone/github-push/issues"
+  },
+  "homepage": "https://github.com/cdotyone/github-push#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.4",
+    "glob": "^7.1.6",
+    "util": "^0.12.3"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "^0.20.5",
+    "eslint": "^6.3.0",
+    "husky": "^3.1.0",
+    "jest": "^24.9.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run build && git add ."
+    }
+  }
+}
